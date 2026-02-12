@@ -1,0 +1,31 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+
+# Node
+/node_modules
+
+# Angular cache
+/.angular
+
+# IDEs
+/.idea
+/.vscode
+*.swp
+*.swo
+
+# Misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment files
+*.env

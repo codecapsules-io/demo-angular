@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
+  standalone: false,
   templateUrl: './auth.component.html',
 })
 export class AuthComponent {
@@ -36,18 +37,18 @@ export class AuthComponent {
       authObs = this.authService.signUp(email, password)
     }
 
-    authObs.subscribe(
-      (resData) => {
+    authObs.subscribe({
+      next: (resData) => {
         console.log(resData);
         this.isLoading = false;
         this.router.navigate(['/recipes']);
       },
-      (errorMessage) => {
+      error: (errorMessage) => {
         console.log(errorMessage);
         this.error = errorMessage;
         this.isLoading = false;
       }
-    );
+    });
 
     form.reset();
   }
